@@ -1,0 +1,217 @@
+/* Dynamic Island Inspired Navbar */
+.navbar {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    top: 15px; /* Space from the top */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Avoid touching screen edges */
+    max-width: 1100px; /* Keeps it compact */
+    border-radius: 40px; /* Rounded pill shape */
+    padding: 14px 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Navigation container */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+/* Logo */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none;
+}
+
+/* Main navigation */
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-title {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 14px;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.menu-title:hover {
+    color: #0073e6;
+}
+
+/* Dropdown menu */
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    display: none;
+    min-width: 180px;
+    padding: 12px 0;
+}
+
+.menu-item.active .submenu {
+    display: block;
+}
+
+.submenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu li {
+    padding: 10px 20px;
+}
+
+.submenu a {
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    transition: background 0.2s;
+}
+
+.submenu a:hover {
+    background: #f4f4f4;
+    border-radius: 10px;
+}
+
+/* Navbar Actions (Login/Signup) */
+.nav-actions {
+    display: flex;
+    gap: 14px; /* Space between buttons */
+    align-items: center;
+}
+
+/* Base button style */
+.button {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 1;
+}
+
+/* Log In Button - Static Border */
+.login-btn {
+    color: black;
+    border: 2px solid black;
+    background: transparent;
+}
+
+/* Sign Up Button - Flowing Border Effect */
+.button-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 0px; /* Space between button and border */
+    border-radius: 50px;
+    background: #e0e0e0; /* Outer grayish-white background */
+}
+
+.button-wrapper .signup-btn {
+    background: black;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: none;
+}
+
+/* Flowing border effect */
+.button-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 50px;
+    padding: 3px;
+    background: linear-gradient(90deg, 
+        red, orange, yellow, green, blue, indigo, violet, 
+        red, orange, yellow, green, blue, indigo, violet); /* Repeat the gradient */
+    background-size: 200% 100%; /* Double the width for seamless looping */
+    z-index: -1;
+    animation: glowing-border 3s linear infinite; /* Adjust duration as needed */
+}
+
+@keyframes glowing-border {
+    0% {
+        background-position: 100% 50%; /* Start from the right */
+    }
+    100% {
+        background-position: 0% 50%; /* Move to the left */
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .navbar {
+        width: 95%;
+        max-width: 900px;
+    }
+
+    .nav-container {
+        padding: 0 25px;
+    }
+
+    .menu {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 90%;
+        max-width: 600px;
+        border-radius: 30px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .nav-actions {
+        margin-top: 10px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
