@@ -9,39 +9,60 @@ interface MenuItem {
 
 const menuData: MenuItem[] = [
   {
-    title: "Why SanaFi",
-    link: "#",
-    subMenu: [
-      { title: "Transactions", link: "#" },
-      { title: "Auth", link: "#" },
-      { title: "Identity", link: "#" },
-    ],
-  },
-  {
     title: "Products",
     link: "#",
     subMenu: [
-      { title: "Docs", link: "#" },
-      { title: "API Reference", link: "#" },
-      { title: "Guides", link: "#" },
-    ],
-  },
-  {
-    title: "Use Cases",
-    link: "#",
-    subMenu: [
-      { title: "About Us", link: "#" },
-      { title: "Careers", link: "#" },
-      { title: "Press", link: "#" },
+      { title: "Personal Finance AI", link: "#" },
+      { title: "Financial Insights API", link: "#" },
+      { title: "Subscription Management", link: "#" },
     ],
   },
   {
     title: "Developers",
     link: "#",
     subMenu: [
+      { title: "API Reference", link: "#" },
+      { title: "SDKs & Libraries", link: "#" },
+      { title: "Integration Guide", link: "#" },
+    ],
+  },
+  {
+    title: "Resources",
+    link: "#",
+    subMenu: [
+      { title: "Docs", link: "#" },
+      { title: "Guides", link: "#" },
+      { title: "Blog", link: "#" },
+      { title: "Case Studies", link: "#" },
+    ],
+  },
+  {
+    title: "Use Cases",
+    link: "#",
+    subMenu: [
+      { title: "Consumers", link: "#" },
+      { title: "FinTechs", link: "#" },
+      { title: "Banks & Hedge Funds", link: "#" },
+      { title: "Regulatory Compliance", link: "#" },
+    ],
+  },
+  {
+    title: "Company",
+    link: "#",
+    subMenu: [
       { title: "About Us", link: "#" },
-      { title: "About Us", link: "#" },
-      { title: "About Us", link: "#" },
+      { title: "Careers", link: "#" },
+      { title: "Press", link: "#" },
+      { title: "Contact", link: "#" },
+    ],
+  },
+  {
+    title: "Pricing",
+    link: "#",
+    subMenu: [
+      { title: "Personal", link: "#" },
+      { title: "Business", link: "#" },
+      { title: "Enterprise", link: "#" },
     ],
   },
 ];
